@@ -11,8 +11,16 @@ long catalan_number(int n)
     if (n < 0)
         return 0;
 
-    // TODO
+    if (n == 0)
+        return 1;
+
+    long c = 1;  // C0
+    for (int k = 1; k <= n; k++) {
+        c = c * (4 * k - 2) / (k + 1);
+    }
+    return c;
 }
+
 
 /* do not change main function */
 int main(void)
